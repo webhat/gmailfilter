@@ -46,13 +46,20 @@ $(document).ready(function () {
         var id = $(this).attr("refid");
         var elems = $("*[refid='" + id + "']");
         var extension = "";
-        $.each(elems,function(i,elem){
+        $.each(elems, function (i, elem) {
             switch (elem.nodeName.toLowerCase()) {
                 case 'label':
-                    alert("label");
+                    alert(elem.nodeName.toLowerCase());
+                    break;
+                case "shouldarchive":
+                case "shouldstar":
+                case "shouldneverspam":
+                case "shouldalwaysmarkasimportant":
+                case "shouldtrash":
+                    alert(elem.nodeName.toLowerCase());
                     break;
                 default:
-                    extension += elem.nodeName.toLowerCase() +":("+ $(elem).html() +")";
+                    extension += elem.nodeName.toLowerCase() + ":(" + $(elem).html() + ")";
             }
         });
         console.log(google_uri + extension);
@@ -89,9 +96,9 @@ $(document).ready(function () {
         $('textarea#edit').focusout(function () {
             console.log("hide textarea");
             $('textarea#edit').hide();
-            $('textarea#edit').val(" ");
+            //$('textarea#edit').val(" ");
             var elem = $("from[refid='" + id + "']");
-            if(elem.html() == elem.attr("reset"))
+            if (elem.html() == elem.attr("reset"))
                 elem.removeClass("edited");
             else
                 elem.addClass("edited");
