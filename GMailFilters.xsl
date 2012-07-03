@@ -29,7 +29,8 @@
             <head>
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"/>
                 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-                <link rel="stylesheet" href="style.css"/>
+                <script type="text/javascript" src="http://www.jongma.org/webtools/jquery/jquery.xslt.js"></script>
+                <link rel="stylesheet" href="css/style.css"/>
             </head>
             <body>
                 <div id="label"><span class="coltitle">Label</span></div>
@@ -50,7 +51,7 @@
                 <textarea rows="2" cols="1" id="edit"/>
             </body>
 
-            <script src="mailfilter_rules.js"></script>
+            <script src="js/mailfilter_rules.js"></script>
         </html>
     </xsl:template>
 </xsl:stylesheet>
