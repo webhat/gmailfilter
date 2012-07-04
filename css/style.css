@@ -1,0 +1,198 @@
+#label {
+    top: 0;
+    left: 100px;
+    width: 200px;
+    display: block;
+    position: absolute;
+}
+
+#label label {
+    border: 2px #000000 solid;
+    display: block;
+}
+
+#from {
+    top: 0;
+    left: 300px;
+    width: 200px;
+    display: block;
+    position: absolute;
+}
+
+#from from {
+    border: 2px #000000 solid;
+    display: block;
+}
+
+#hastheword {
+    top: 0;
+    left: 700px;
+    width: 200px;
+    display: block;
+    position: absolute;
+}
+
+#hastheword hastheword {
+    border: 2px #000000 solid;
+    display: block;
+}
+
+#to {
+    top: 0;
+    left: 500px;
+    width: 200px;
+    display: block;
+    position: absolute;
+}
+
+#to to {
+    border: 2px #000000 solid;
+    display: block;
+}
+
+#subject {
+    top: 0;
+    left: 1100px;
+    width: 200px;
+    display: block;
+    position: absolute;
+}
+
+#subject subject {
+    border: 2px #000000 solid;
+    display: block;
+}
+
+#forwardto {
+    top: 0;
+    left: 1300px;
+    width: 200px;
+    display: block;
+    position: absolute;
+}
+
+#forwardto forwardto {
+    border: 2px #000000 solid;
+    display: block;
+}
+
+#doesnothavetheword {
+    top: 0;
+    left: 900px;
+    width: 200px;
+    display: block;
+    position: absolute;
+}
+
+#doesnothavetheword doesnothavetheword {
+    border: 2px #000000 solid;
+    display: block;
+}
+
+#shouldstar {
+    top: 0;
+    left: 0px;
+    width: 20px;
+    display: block;
+    position: absolute;
+}
+
+#shouldstar shouldstar {
+    background-image: url(https://ssl.gstatic.com/ui/v1/star/star-lit4.png);
+    width: 19px;
+    height: 19px;
+    display: block;
+}
+
+#shouldneverspam {
+    top: 0;
+    left: 20px;
+    width: 20px;
+    display: block;
+    position: absolute;
+}
+
+#shouldneverspam shouldneverspam {
+    background-image: url(https://ssl.gstatic.com/ui/v1/icons/mail/sprite_black2.png);
+    background-color: red;
+    width: 21px;
+    height: 21px;
+    background-position-x: -63px;
+    background-position-y: -42px;
+    display: block;
+}
+
+#shouldalwaysmarkasimportant {
+    top: 0;
+    left: 40px;
+    width: 20px;
+    display: block;
+    position: absolute;
+
+}
+
+#shouldalwaysmarkasimportant shouldalwaysmarkasimportant {
+    background-position: -38px 0;
+    background-image: url(https://ssl.gstatic.com/ui/v1/icons/mail/sprite_importance2.png);
+    width: 19px;
+    height: 19px;
+    display: block;
+}
+
+#shouldtrash {
+    top: 0;
+    left: 60px;
+    width: 20px;
+    display: block;
+    position: absolute;
+}
+
+#shouldtrash shouldtrash {
+    background-image: url(https://ssl.gstatic.com/ui/v1/icons/mail/sprite_black2.png);
+    width: 21px;
+    height: 21px;
+    background-position-x: -63px;
+    background-position-y: -42px;
+    display: block;
+}
+
+#shouldarchive {
+    top: 0;
+    left: 80px;
+    width: 20px;
+    display: block;
+    position: absolute;
+}
+
+#shouldarchive shouldarchive {
+    background-image: url(https://ssl.gstatic.com/ui/v1/icons/mail/sprite_black2.png);
+    width: 21px;
+    height: 21px;
+    background-position-x: -84px;
+    background-position-y: -21px;
+    display: block;
+}
+
+.coltitle {
+    text-align: center;
+}
+
+textarea#edit {
+    display: none;
+    position: absolute;
+    width: 200px;
+}
+
+.edited {
+    background-size: 15px 10px;
+    background-position: 185px 0px;
+    background-repeat: no-repeat;
+    background-image: url(../img/pen.png);
+}
+.viewrule {
+    background-size: 15px 10px;
+    background-position: 185px 10px;
+    background-repeat: no-repeat;
+    background-image: url(../img/sprocket.png);
+}
+

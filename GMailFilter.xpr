@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="13.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="GMailFilter.xpr">
+        <file name="GMailFilters.xsl"/>
+        <file name="mailfilter_rules.js"/>
+        <file name="mailfilter.html"/>
+        <file name="mailFilters.xml"/>
+    </projectTree>
+</project>
