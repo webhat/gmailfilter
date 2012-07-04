@@ -19,7 +19,7 @@ $(document).ready(function () {
 
         var label = $(this).html();
         var attrib = $(this).attr("refid");
-        $('*[refid="' + $(this).attr("refid") + '"]').show();
+        $('*[refid="' + $(this).attr("refid") + '"]').css('opacity',1);
 
         var cnt = 0;
 
@@ -27,22 +27,22 @@ $(document).ready(function () {
             el = $(elem);
 
             if (/* el.attr("refid") != attrib && */ el.html() == label) {
-                $('*[refid="' + el.attr("refid") + '"]').css('background-color', colorTable[cnt++]).show();
-                el.show();
+                $('*[refid="' + el.attr("refid") + '"]').css('background-color', colorTable[cnt++]).css('opacity',1);
+                el.css('opacity',1);
             } else {
-                el.hide();
+                el.css('opacity',0);
             }
         });
 
         if ($(this).parent().hasClass("close")) {
             $(this).parent().removeClass("close");
-            $("*").css('background-color', "white").show();
+            $("*").css('background-color', "white").css('opacity',1);
             $('textarea#edit').hide();
         } else {
             $(this).parent().addClass("close");
         }
     });
-    $("from").dblclick(function (event) {
+    $("label").dblclick(function (event) {
         var id = $(this).attr("refid");
         var elems = $("*[refid='" + id + "']");
         var extension = "";
@@ -58,6 +58,9 @@ $(document).ready(function () {
                 case "shouldtrash":
                     //alert(elem.nodeName.toLowerCase());
                     break;
+                case 'hastheword':
+                    extension += " " + $(elem).html() + "";
+                    break
                 default:
                     extension += elem.nodeName.toLowerCase() + ":(" + $(elem).html() + ")";
             }
@@ -91,7 +94,7 @@ $(document).ready(function () {
 //        });
         $('textarea#edit').keyup(function () {
             $("from[refid='" + id + "']").html($('textarea#edit').val());
-            $("from[refid='" + id + "']").elem.removeClass("edited");
+            $("from[refid='" + id + "']").addClass("edited");
         });
         $('textarea#edit').focusout(function () {
             console.log("hide textarea");
@@ -104,37 +107,75 @@ $(document).ready(function () {
                 elem.addClass("edited");
         });
     });
+    $("hastheword").click(editBlock);
 });
+
+function editBlock() {
+    var id = $(this).attr("refid");
+    var elem = $("hastheword[refid='" + id + "']");
+    console.log(id);
+
+    if (!elem.attr("reset")) {
+        elem.attr("reset", elem.html());
+    }
+    console.log(elem.html() + "\r\n" + $(event.target).html());
+
+
+    $('textarea#edit').val($(event.target).html());
+    $('textarea#edit').show();
+    $('textarea#edit').css('top', event.pageY);// $(this).position().top + 30);
+    $('textarea#edit').css('left', event.pageX);//$(this).position().left);
+    $('textarea#edit').unbind('keyup');
+    $('textarea#edit').focus();
+
+    console.log("Top:  " + $('textarea#edit').position().top);
+    console.log("Left: " + $('textarea#edit').position().left);
+
+    $('textarea#edit').keyup(function () {
+        $("hastheword[refid='" + id + "']").html($('textarea#edit').val());
+        $("hastheword[refid='" + id + "']").addClass("edited");
+    });
+    $('textarea#edit').focusout(function () {
+        console.log("hide textarea");
+        $('textarea#edit').hide();
+        //$('textarea#edit').val(" ");
+        var elem = $("hastheword[refid='" + id + "']");
+        if (elem.html() == elem.attr("reset"))
+            elem.removeClass("edited");
+        else
+            elem.addClass("edited");
+    });
+}
 
 
 function hideBlock() {
-    $("div label").hide();
-    $("div from").hide();
-    $("div hastheword").hide();
-    $("div doesnothavetheword").hide();
-    $("div to").hide();
-    $("div subject").hide();
-    $("div forwardto").hide();
-    $("div shouldarchive").hide();
-    $("div shouldstar").hide();
-    $("div shouldneverspam").hide();
-    $("div shouldalwaysmarkasimportant").hide();
-    $("div shouldtrash").hide();
+    $("div label").css('opacity',0);
+    $("div from").css('opacity',0);
+    $("div hastheword").css('opacity',0);
+    $("div doesnothavetheword").css('opacity',0);
+    $("div to").css('opacity',0);
+    $("div subject").css('opacity',0);
+    $("div forwardto").css('opacity',0);
+    $("div shouldarchive").css('opacity',0);
+    $("div shouldstar").css('opacity',0);
+    $("div shouldneverspam").css('opacity',0);
+    $("div shouldalwaysmarkasimportant").css('opacity',0);
+    $("div shouldtrash").css('opacity',0);
 }
 
 function showBlock() {
-    $("div label").show();
-    $("div from").show();
-    $("div hastheword").show();
-    $("div doesnothavetheword").show();
-    $("div to").show();
-    $("div subject").show();
-    $("div forwardto").show();
-    $("div shouldarchive").show();
-    $("div shouldstar").show();
-    $("div shouldneverspam").show();
-    $("div shouldalwaysmarkasimportant").show();
-    $("div shouldtrash").show();
+    $("div label").css('opacity',1);
+    $("div from").css('opacity',1);
+    $("div hastheword").css('opacity',1);
+    $("div doesnothavetheword").css('opacity',1);
+    $("div to").css('opacity',1);
+    $("div subject").css('opacity',1);
+    $("div forwardto").css('opacity',1);
+    $("div shouldarchive").css('opacity',1);
+    $("div shouldstar").css('opacity',1);
+    $("div shouldneverspam").css('opacity',1);
+    $("div shouldalwaysmarkasimportant").css('opacity',1);
+    $("div shouldtrash").css('opacity',1);
 }
 
 var colorTable = ["aqua", "green", "red", "orange", "purple", "yellow", "cyan", "magenta", "lightblue", "lightgreen", "pink"];
